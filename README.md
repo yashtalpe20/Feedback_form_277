@@ -1,2 +1,2 @@
-# Product_catalog_277
-This production-ready application demonstrates enterprise-level product catalog management with the premium SaaS application feel you envisioned, combining modern aesthetics with robust functionality.
+# Feedback_form_277
+This project is a modern, cloud-inspired feedback form web application built entirely with HTML, CSS, and JavaScript. Users can submit feedback with their name, email, feedback type, rating, and comments, and view all past entries in a stylish, responsive table. The application features smooth validation, animated messages, and client-side data persistence using localStorage, making it ideal for demonstrations, small business, or SaaS UI prototyping.
