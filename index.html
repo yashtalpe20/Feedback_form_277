@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>School Feedback Form - Gradient Style</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      --accent: #f4f7ff;
+      --radius: 16px;
+      --shadow: 0 12px 30px rgba(101, 71, 255, 0.15);
+      --success-color: #38d39f;
+      --error-color: #ff6b6b;
+      --text-color-dark: #181818;
+      --text-color-light: #f7f7f7;
+      --label-color: #555;
+      --transition: 0.3s ease;
+    }
+    body {
+      background: var(--primary-gradient);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .form-container {
+      background: var(--accent);
+      padding: 3rem 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      max-width: 650px;
+      width: 100%;
+      color: var(--text-color-dark);
+    }
+    h1 {
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: 700;
+      color: #4527a0;
+    }
+    form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem 2rem;
+    }
+    label {
+      font-size: 1rem;
+      color: var(--label-color);
+      margin-bottom: 0.4rem;
+      display: block;
+      font-weight: 500;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius);
+      border: 1.8px solid #ddd;
+      font-size: 1rem;
+      transition: border-color var(--transition);
+      outline: none;
+      resize: vertical;
+      font-family: 'Roboto', sans-serif;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #4527a0;
+      box-shadow: 0 0 8px 0 #b691fc6e;
+      background-color: #fbf9ff;
+    }
+    textarea {
+      min-height: 84px;
+    }
+    .rating-group {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+    }
+    .rating-group input {
+      display: none;
+    }
+    .rating-group label {
+      font-size: 2.2rem;
+      color: #ddd;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+    .rating-group input:checked ~ label,
+    .rating-group label:hover,
+    .rating-group label:hover ~ label {
+      color: #4527a0;
+    }
+    .actions {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      gap: 1.4rem;
+      margin-top: 1.5rem;
+    }
+    button {
+      padding: 0.75rem 2rem;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--primary-gradient);
+      color: var(--text-color-light);
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity var(--transition);
+      box-shadow: 0 6px 20px rgba(66, 33, 143, 0.3);
+    }
+    button:hover {
+      opacity: 0.85;
+    }
+    #formMessage {
+      grid-column: 1 / -1;
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      color: var(--success-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1><i class="fa-solid fa-school"></i> School Feedback Form</h1>
+    <form id="feedbackForm" autocomplete="off" novalidate>
+      <div>
+        <label for="name">Full Name *</label>
+        <input id="name" name="name" type="text" placeholder="Enter your full name" required />
+      </div>
+      <div>
+        <label for="email">Email Address *</label>
+        <input id="email" name="email" type="email" placeholder="example@email.com" required />
+      </div>
+      <div>
+        <label for="classGrade">Class / Grade *</label>
+        <select id="classGrade" name="classGrade" required>
+          <option value="" disabled selected>Select your class or grade</option>
+          <option value="Grade 1">Grade 1</option>
+          <option value="Grade 2">Grade 2</option>
+          <option value="Grade 3">Grade 3</option>
+          <option value="Grade 4">Grade 4</option>
+          <option value="Grade 5">Grade 5</option>
+          <option value="Grade 6">Grade 6</option>
+          <option value="Grade 7">Grade 7</option>
+          <option value="Grade 8">Grade 8</option>
+          <option value="Grade 9">Grade 9</option>
+          <option value="Grade 10">Grade 10</option>
+          <option value="Grade 11">Grade 11</option>
+          <option value="Grade 12">Grade 12</option>
+        </select>
+      </div>
+      <div>
+        <label for="subject">Subject *</label>
+        <select id="subject" name="subject" required>
+          <option value="" disabled selected>Select subject</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Science">Science</option>
+          <option value="English">English</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="History">History</option>
+          <option value="Geography">Geography</option>
+          <option value="Physics">Physics</option>
+        </select>
+      </div>
+      <div>
+        <label for="teacher">Teacher's Name</label>
+        <input id="teacher" name="teacher" type="text" placeholder="Enter teacher's name (optional)" />
+      </div>
+      <div class="rating-group" aria-label="Rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Excellent">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Good">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3" checked /><label for="star3" title="Average">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Poor">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very Poor">&#9733;</label>
+      </div>
+      <div style="grid-column: span 2;">
+        <label for="comments">Comments or Suggestions</label>
+        <textarea id="comments" name="comments" placeholder="Your detailed feedback or suggestions"></textarea>
+      </div>
+      <div class="actions">
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Feedback</button>
+        <button type="reset" id="resetBtn"><i class="fa-solid fa-trash"></i> Reset</button>
+      </div>
+      <div id="formMessage"></div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+    const msgEl = document.getElementById('formMessage');
+
+    function validateEmail(email) {
+      return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+    }
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      msgEl.textContent = "";
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name')?.trim(),
+        email: formData.get('email')?.trim(),
+        classGrade: formData.get('classGrade'),
+        subject: formData.get('subject'),
+        teacher: formData.get('teacher')?.trim(),
+        rating: formData.get('rating'),
+        comments: formData.get('comments')?.trim()
+      };
+
+      if (!data.name || !data.email || !data.classGrade || !data.subject || !data.rating) {
+        msgEl.textContent = "Please fill in all required fields (*)";
+        msgEl.style.color = "var(--error-color)";
+        return;
+      }
+      if (!validateEmail(data.email)) {
+        msgEl.textContent = "Please enter a valid email address.";
+        msgEl.style.color = "var(--error-color)";
+        return;
+      }
+
+      // Normally here you would send data to a server
+      console.log("Feedback received:", data);
+
+      msgEl.textContent = "Thank you for your feedback!";
+      msgEl.style.color = "var(--success-color)";
+      form.reset();
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      msgEl.textContent = "";
+    });
+  </script>
+</body>
+</html>
